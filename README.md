@@ -47,7 +47,7 @@ print([k for k in data.keys() if not k.startswith('__')])
 # ['X136_DE_time', 'X136_FE_time', 'X136RPM']
 ```
 
-Use the `DE_time` key — that's the drive end accelerometer, which is the most commonly used channel for fault detection.
+Use the `DE_time` key cuz that's the drive end accelerometer, which is the most commonly used channel for fault detection.
 
 ```python
 signal = data['X136_DE_time'].flatten()[:4096]
@@ -65,4 +65,4 @@ All files here are recorded at `fs = 12000` Hz — 12,000 samples per second. Ke
 
 ## Why only 4096 samples?
 
-Each file contains ~120,000 samples. Loading all of them into an FFT and plotting with matplotlib is slow and unreadable. 4096 samples gives you roughly 0.34 seconds of signal — more than enough to see the fault pattern clearly and compute meaningful statistics.
+Each file contains ~120,000 samples. Loading all of them into an FFT and plotting with matplotlib is slow and unreadable. 4096 samples gives you roughly 0.34 seconds of signal which is more than enough to see the fault pattern clearly and compute meaningful statistics.
